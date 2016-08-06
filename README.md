@@ -1,0 +1,1 @@
+# Summer-School-of-Technical-Activities-Kraljevica-2016
