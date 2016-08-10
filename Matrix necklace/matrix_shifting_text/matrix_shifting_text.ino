@@ -100,9 +100,9 @@ PROGMEM const byte CH[] = {
 4, 8, B0001000, B0000100, B0001000, B0000100, B0000000, // ~
 };
 
-int data = 9;
-int load = 10;
-int clock = 11;
+int data = 0;
+int load = 1;
+int clock = 2;
 int maxInUse = 1;    //change this variable to set how many MAX7219's you'll use
 MaxMatrix m(data, load, clock, maxInUse);
 byte buffer[10];
@@ -111,7 +111,7 @@ void setup()
 {
   m.init();
   m.setIntensity(8);
-  Serial.begin(9600);
+
 }
 
 void loop()
