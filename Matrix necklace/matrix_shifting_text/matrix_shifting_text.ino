@@ -110,7 +110,7 @@ byte buffer[10];
 void setup()
 {
   m.init();
-  m.setIntensity(8);
+  m.setIntensity(1);
 
 }
 

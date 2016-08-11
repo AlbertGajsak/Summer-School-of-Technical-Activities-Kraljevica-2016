@@ -187,26 +187,26 @@ void receiveData() {
 			break;
 		case 'R':
 			Strana += turnOffset;
-			Setpoint += 0.5;
+			Setpoint += 1;
 			//Setpoint += 1;
 			//Setpoint += 3;
 			break;
 		case 'r':
 			Strana -= turnOffset;
 			//Setpoint -= 1;
-			Setpoint -= 0.5;
+			Setpoint -= 1;
 			//Setpoint -= 3;
 			break;
 
 		case 'L':
 			Strana -= turnOffset;
 			//Setpoint -= 1;
-			Setpoint -= 0.5;
+			Setpoint -= 1;
 			//Setpoint += 3;
 			break;
 		case 'l':
 			Strana += turnOffset;
-			Setpoint -= 0.5;
+			Setpoint += 1;
 			//Setpoint -= 1;
 			//Setpoint -= 3;
 			break;
