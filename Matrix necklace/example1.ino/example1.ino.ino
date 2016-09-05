@@ -2,8 +2,6 @@
 #include <MaxMatrix.h>
 #include <avr/pgmspace.h>
 
-
-
 int data = 2;
 int load = 3;
 int clock = 4;
@@ -19,5 +17,11 @@ void setup()
 
 void loop()
 {
-  
+  for(int i=0;i<8;i++){
+    for(int j=0;j<8;j++){
+      matrix.setDot(j,i,1);
+      delay(100);
+      matrix.clear();
+    }
+  }
 }

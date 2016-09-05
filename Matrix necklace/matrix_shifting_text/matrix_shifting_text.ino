@@ -1,7 +1,7 @@
 
 #include <MaxMatrix.h>
-#include <avr/pgmspace.h>
 
+//u flash memoriju mikroračunala spremamo izgled znakova osnovne ASCII tablice
 PROGMEM const byte CH[] = {
 3, 8, B0000000, B0000000, B0000000, B0000000, B0000000, // space
 1, 8, B1011111, B0000000, B0000000, B0000000, B0000000, // !
@@ -100,27 +100,27 @@ PROGMEM const byte CH[] = {
 4, 8, B0001000, B0000100, B0001000, B0000100, B0000000, // ~
 };
 
+//definiranje izlaznih pinova potrebnih za upravljanje LED matrix modulom
 int data = 0;
 int load = 1;
 int clock = 2;
-int maxInUse = 1;    //change this variable to set how many MAX7219's you'll use
+int maxInUse = 1;    //definiramo koliko ćemo LED matrix modula koristiti
 MaxMatrix m(data, load, clock, maxInUse);
 byte buffer[10];
 
 void setup()
 {
-  m.init();
-  m.setIntensity(1);
-
+  m.init(); // inicijalizacija LED matrix modula
+  m.setIntensity(1); //postavljanje svjetline DOT Matrix modula (broj od 1 do 8)
 }
 
 void loop()
 {
-  printStringWithShift("NCTK  Kraljevica 2016",120);
+  printStringWithShift(F("NCTK  Kraljevica 2016"),120); //ispisujemo određeni znakovni niz
   m.shiftLeft(false, true);
 }
 
-void printCharWithShift(char c, int shift_speed)
+void printCharWithShift(char c, int shift_speed) //definicija funkcije za ispisivanje znakova (upotrebljena u printStringWithShift() funkciji
 {
   if (c < 32) return;
   c -= 32;
@@ -135,7 +135,7 @@ void printCharWithShift(char c, int shift_speed)
   }
 }
 
-void printStringWithShift(char* s, int shift_speed)
+void printStringWithShift(char* s, int shift_speed) //definicija funkcije za ispisivanje znakovnih nizova
 {
   while (*s != 0)
   {
